@@ -12,11 +12,6 @@ class TestSquad(unittest.TestCase):
         for player in self.squad.players:
             tot += player.price
         self.assertEqual(tot, self.squad.total_price)
-    
-    def test_players_per_team(self):
-        players_per_team = self.squad.check_players_from_each_team()
-        self.assertIsInstance(players_per_team, dict)
-        print(self.squad)
 
 
 

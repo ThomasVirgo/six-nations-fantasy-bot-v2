@@ -11,24 +11,7 @@ class Position(Enum):
     WING = "Wing",
     CENTRE = "Centre",
     FULLBACK = "Fullback"
-
-class Number(Enum):
-    UNDECIDED = 0
-    ONE = 1
-    TWO = 2
-    THREE = 3
-    FOUR = 4
-    FIVE = 5
-    SIX = 6
-    SEVEN = 7
-    EIGHT = 8
-    NINE = 9
-    TEN = 10
-    ELEVEN = 11
-    TWELVE = 12
-    THIRTEEN = 13
-    FOURTEEEN = 14
-    FIFTEEN = 15
+    BENCH = "Bench"
 
 class Country(Enum):
     ENGLAND = "England"
@@ -39,21 +22,29 @@ class Country(Enum):
     ITALY = "Italy"
 
 POSITION_MAP = {
-    Number.ONE: Position.PROP,
-    Number.TWO: Position.HOOKER,
-    Number.THREE: Position.PROP,
-    Number.FOUR: Position.SECOND_ROW,
-    Number.FIVE: Position.SECOND_ROW,
-    Number.SIX: Position.BACK_ROW,
-    Number.SEVEN: Position.BACK_ROW,
-    Number.EIGHT: Position.BACK_ROW,
-    Number.NINE: Position.SCRUM_HALF,
-    Number.TEN: Position.FLY_HALF,
-    Number.ELEVEN: Position.WING,
-    Number.TWELVE: Position.CENTRE,
-    Number.THIRTEEN: Position.CENTRE,
-    Number.FOURTEEEN: Position.WING,
-    Number.FIFTEEN: Position.FULLBACK
+    "1": Position.PROP,
+    "2": Position.HOOKER,
+    "3": Position.PROP,
+    "4": Position.SECOND_ROW,
+    "5": Position.SECOND_ROW,
+    "6": Position.BACK_ROW,
+    "7": Position.BACK_ROW,
+    "8": Position.BACK_ROW,
+    "9": Position.SCRUM_HALF,
+    "10": Position.FLY_HALF,
+    "11": Position.WING,
+    "12": Position.CENTRE,
+    "13": Position.CENTRE,
+    "14": Position.WING,
+    "15": Position.FULLBACK,
+    "16": Position.BENCH,
+    "17": Position.BENCH,
+    "18": Position.BENCH,
+    "19": Position.BENCH,
+    "20": Position.BENCH,
+    "21": Position.BENCH,
+    "22": Position.BENCH,
+    "23": Position.BENCH,
 }
 
 @dataclass
@@ -62,10 +53,10 @@ class Player:
     last_name: str
     country: Country
     position: Position
-    price: float
     is_playing: bool
     is_starting: bool
-    number: Number = Number.UNDECIDED
+    number: str
+    price: float = 0
 
     def __str__(self) -> str:
         return f"{self.first_name} {self.last_name} country={self.country.name} price={self.price} position={self.position.name}"
