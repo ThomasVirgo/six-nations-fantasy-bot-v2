@@ -35,3 +35,6 @@ class Driver:
             fixtures.append(fixture)
         self.finish()
         return fixtures
+    
+    def scrape_odds(self):
+        pass

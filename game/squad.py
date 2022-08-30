@@ -1,4 +1,6 @@
 from typing import List
+
+from driver.logic import Fixture
 from .player import Player, Country
 from .constants import MAX_PLAYERS_PER_TEAM
 
@@ -42,3 +44,10 @@ class Squad:
             if players_per_team[country] > MAX_PLAYERS_PER_TEAM:
                 raise ValueError(f"{country.name} has more than 4 players, this is not allowed")
         return players_per_team
+
+    @classmethod
+    def create_squad(cls, fixtures: List[Fixture], odds):
+        """
+        Given a list of fixtures containing the starting lineups, and the odds of which team is most likely to win, this method creates a squad.
+        """
+        pass

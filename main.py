@@ -4,8 +4,8 @@ from driver.logic import Fixture
 def main():
     print("----Running Main Script----")
     # driver = Driver()
-    # driver.scrape_and_create_lineups()
-    Fixture.from_scrape("1234")
+    fixture = Fixture.from_scrape("1234")
+    print(fixture.home_lineup)
 
 
 if __name__ == "__main__":
